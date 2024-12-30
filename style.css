@@ -1,0 +1,95 @@
+    /* Ajout de styles pour le chronomètre, notification, et animations */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      transition: background-color 0.3s;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(7, 60px);
+      grid-template-rows: repeat(6, 60px);
+      gap: 5px;
+      margin: 20px auto;
+      width: fit-content;
+    }
+    
+    .cell {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cell.player1 {
+      background-color: red;
+    }
+    
+    .cell.player2 {
+      background-color: yellow;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    button:hover {
+      background-color: #218838;
+    }
+    
+    .notification {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #d9534f;
+      display: none;
+    }
+    
+    .notification.show {
+      display: block;
+      color: #5bc0de;
+    }
+    
+    .timer {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    
+    /* Animation pour l'effet de chute des pièces */
+    .dropped {
+      animation: dropAnimation 0.5s ease-out;
+    }
+    
+    @keyframes dropAnimation {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .dark-mode {
+      background-color: #333;
+      color: white;
+    }
